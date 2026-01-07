@@ -15,7 +15,7 @@ combining **YouTube** and **Twitch** in one semi-professional, and user-friendly
 [Installation](#installation)
 [Usage](#usage)
 [Configuration](#configuration)
-[Node.js](#nodejs--api-integration)
+[Node.js & API Integration](#nodejs--api-integration)
 [Screenshots](#screenshots)
 [Contributing](#contributing)
 [License](#license)
@@ -80,13 +80,48 @@ These are only some of the few you can find there are also tutorials on Youtube 
 ---
 
 
-### Node.js Setup
-1. go to https://nodejs.org/en/download --> **Node.js Download Offical Website**
+## Usage
+After starting the website, it will automatically:
+    Embed your Youtube channel from `config.json`
+    Embed your Twitch channel from  `config.json`
+    Apply your theme color dynamically
+    Display any social links from `socialLinks` section
+Tip: Keep `config.json` updated so the site always shows the latest streams and links.
 
-2. Install Node.js v25+ (or latest version avalible)
+---
+## Configuration
+Example `config.json`:
 
-3. use npm -v to test if the program downloaded correctly.
+{
+    "youtubeChannel": "YourChannelID",
+    "twitchChannel": "YourTwitchUsername",
+    "themeColor": "yourThemeColor",
+    "socialLinks": {
+        "twitter": "yourHandle"
+        "discord": "yourServer"
+    }
+}
 
+### Node.js & API Integration
+Node.js is used for:
+
+    1. Serving the website - Using Express.js to handle requests and serve static files.
+    2. Dynamic API integration - Fetching live content from YouTube and Twitch automatically.
+
+    Example:
+
+    const fetch = require('node-fetch');
+
+    async function getLatestYouTubeVid(channelId, apiKey) {
+        const url = `https://www.googleapis.com/youtube/v3/search?channelId=${channelId}&order=date&part=snippet&type=video&key=${apiKey}`;
+        const response = await fetch(url);
+        const data = await response.json();
+        return data.items[0].snippet.title;
+    };
+
+    3. Real-time features - Optionally integrate live chat or notifications
+    4. Automation - Node.js can build or generate pages dynamically based on
+    `config.json`.
 
 ---
 
