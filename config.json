@@ -1,9 +1,25 @@
 {
-    "youtubeChannel": "https://youtube.com/@JayDyesAlot",
-    "twitchChannel": "https://twitch.tv/Th3Phan0mOn3",
-    "themeColor": "#4CAF50",
+    "youtube": {
+        "channelName": "JayDyesAlot",
+        "channelID": "UC4IvgF5q9lLgD6hQyjKiCQA"
+    },
+
+    "twitch": {
+        "channelName": "Th3Phant0mOn3"
+    },
+
+    "kick": {
+        "channelName": "YourKickName"
+    },
+
+    "tiktok": {
+        "channelName": "YourTikTokName"
+    },
+
+    "theme": {"primeColor": "#4CAF50"},
+
     "socialLinks": {
-        "twitter": "https://x.com/@DovahkiinsArmy",
-        "discord": "https://discord.gg/HnU3HPwx4S"
+        "twitter": "https://x.com/DovahkiinsArmy",
+        "discord": "https://discord.gg/HnU3HPwx45"
     }
 }
