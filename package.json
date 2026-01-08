@@ -1,0 +1,6 @@
+{
+    "name": "my-streaming-website",
+    "version": "1.0.0",
+    "description": "Personal streaming website for Youtube and Twitch",
+    "private": false
+}
